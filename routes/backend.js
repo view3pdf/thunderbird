@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router()
 const fs = require('fs');
 const db = require('../db');
-const dbu =  require('../dbu');
+//const dbu =  require('../dbu');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const multer = require('multer');
@@ -138,7 +138,7 @@ router.post('/login', (req, res) => {
 
  
 
-      dbu.query('SELECT * FROM users WHERE username = ? AND password = ?', [username, password], (error, results, fields) => {
+      db.query('SELECT * FROM users WHERE username = ? AND password = ?', [username, password], (error, results, fields) => {
         
           if (results.length > 0) {
               req.session.loggedin = true;
