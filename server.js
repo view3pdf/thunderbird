@@ -1,6 +1,6 @@
 const express = require('express');
 const db = require('./db'); 
-const dbu = require('./dbu');// Import the database connection module
+//const dbu = require('./dbu');// Import the database connection module
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const ejs = require('ejs');
@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 // Middleware to pass the database connection to every route
 app.use((req, res, next) => {
   req.db = db; 
-  req.dbu = dbu;// Attach the database connection to the request object
+  //req.dbu = dbu;// Attach the database connection to the request object
   next();
 });
 
