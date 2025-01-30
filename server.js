@@ -23,18 +23,6 @@ app.use((req, res, next) => {
 });
 
 
-let visitCount = 0;
-
-// Middleware to count visits
-app.use((req, res, next) => {
-    if (req.path === '/' && req.query.erothghjnsfuherhoewnfogfojhidjfpaiferiwpirgdfij) {
-        visitCount++;
-        console.log(`URL  has been visited ${visitCount} times`);
-    }
-    next();
-});
-
-// Middleware to count visits
 
 
 
@@ -57,6 +45,4 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
-
 
